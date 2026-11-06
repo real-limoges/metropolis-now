@@ -1,0 +1,28 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+
+[package]
+name = "metropolis-now"
+description = "The horror... the horror... of multimodal posteriors."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["parallel"]
+parallel = ["dep:rayon"]
+wasm = ["dep:wasm-bindgen"]
+
+[dependencies]
+metropolis-now-core = { path = "crates/core" }
+rayon = { version = "1.11", optional = true }
+wasm-bindgen = { version = "0.2", optional = true }

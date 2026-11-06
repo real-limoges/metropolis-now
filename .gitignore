@@ -1,0 +1,7 @@
+# notes tree: only docs/reference/ is committed; decisions, audits, state.yaml,
+# private-notes and the generated html mirror (docs/html/) stay local
+docs/*
+!docs/reference/
+
+# cargo build output
+/target/

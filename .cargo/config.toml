@@ -1,0 +1,2 @@
+[alias]
+check-wasm = "check -p metropolis-now --target wasm32-unknown-unknown --no-default-features --features wasm"
